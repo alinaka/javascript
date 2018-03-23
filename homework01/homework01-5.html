@@ -4,15 +4,16 @@
     </head>
     <body>
         <script>
-            var a=prompt("Введите число");
-            var b=prompt("Введите еще одно число");
-            var c=prompt("Введите третье число");
+            var a=parseInt(prompt("Введите число"));
+            var b=parseInt(prompt("Введите еще одно число"));
+            var c=parseInt(prompt("Введите третье число"));
+            var d;
             if ((a===b) || (a===c) || (b===c)) {
-                var d=true;
+                d=true;
             } else {
                 d=false;
             } ;
-            alert (d);
+            alert (d)
         </script>
     </body>
 </html>
