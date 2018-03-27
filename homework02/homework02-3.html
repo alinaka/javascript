@@ -5,6 +5,46 @@
         <script>
             var month = + prompt("Введите номер месяца");
             
+            switch (month) {
+                case 3:
+                case 4:
+                case 5: 
+                    alert( "весна" );
+                    break;
+
+                case 6:
+                case 7:
+                case 8:
+                    alert( "лето" );
+                    break;
+
+                case 9:
+                case 10:
+                case 11:
+                    alert( "осень" );
+                    break;
+
+                case 12:
+                case 1:
+                case 2:
+                    alert( "зима" );
+                    break;
+
+                default:
+                    alert( "Введите номер месяца от 1 до 12" );
+            }
+        </script>
+    </body>
+</html>
+
+<!--
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var month = + prompt("Введите номер месяца");
+            
             if (month >= 3 && month <= 5) {
                 alert("весна");
             }
@@ -21,4 +61,4 @@
             }
         </script>
     </body>
-</html>
+</html>-->
