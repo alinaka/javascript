@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <script> 
+            var i;
+            var j;
+            var str = "<table border='1px'><tbody><tr><td>#</td>";
+           
+            for (j = 1;  j<= 10; j++) {
+                str += "<td>"+j+"</td>";
+            }
+            str += "</tr>";
+           
+            for (i = 1; i <= 10; i++) {
+                str += "<tr>" + "<td>"+i+"</td>";
+                
+                for (j = 1; j <=10; j++) {
+                    str += "<td>"+i*j+"</td>";
+                }
+                
+                str += "</tr>";
+            }
+           
+            str += "</tbody></table>";
+            document.write(str);
+        </script>
+    </body>
+</html>
+
+
+
+<!--
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <script> 
+            var i = 1;
+            var str = "<table border='1px'><tbody><tr><td>#</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>";
+           
+            while (i <= 10) {
+                str = str + "<tr>"+
+                    "<td>"+i+"</td>"+
+                    "<td>"+i*1+"</td>"+
+                    "<td>"+i*2+"</td>"+
+                    "<td>"+i*3+"</td>"+
+                    "<td>"+i*4+"</td>"+
+                    "<td>"+i*5+"</td>"+
+                    "<td>"+i*6+"</td>"+
+                    "<td>"+i*7+"</td>"+
+                    "<td>"+i*8+"</td>"+
+                    "<td>"+i*9+"</td>"+
+                    "<td>"+i*10+"</td>"+
+                    "</tr>";
+                i++;
+            }
+           
+            str=str+ "</tbody></table>";
+            document.write(str);
+        </script>
+    </body>
+</html>
+-->

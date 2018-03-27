@@ -1,0 +1,62 @@
+<html>
+    <head>        
+    </head>
+    <body>
+        <script>
+            var a=[];
+            var b=[];
+            var c=[];
+            
+            for (var i = 0; i <= 2; i++) {
+                a[i] = + prompt("Введите координаты точки a");
+            }
+            for (i = 0; i <= 2; i++) {
+                b[i] = + prompt("Введите координаты точки b");
+            }
+            for (i = 0; i <= 2; i++) {
+                c[i] = + prompt("Введите координаты точки c");
+            }
+                
+            var ab = Math.pow(b[0]-a[0], 2) + Math.pow(b[1]-a[1], 2) + Math.pow(b[2]-a[2], 2);
+            var ac = Math.pow(c[0]-a[0], 2) + Math.pow(c[1]-a[1], 2) + Math.pow(c[2]-a[2], 2);
+            var bc = Math.pow(c[0]-b[0], 2) + Math.pow(c[1]-b[1], 2) + Math.pow(c[2]-b[2], 2);
+            
+            if (ab + ac === bc || ab + bc === ac || ac + bc === ab) {
+                alert ("Прямоугольный!");
+            } else {
+                alert("НЕ прямоугольный");
+            }
+        </script>
+    </body>
+</html>
+
+<!--
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            var aX = + prompt("Введите координаты точки a по оси x");
+            var aY = + prompt("Введите координаты точки a по оси y");
+            var aZ = + prompt("Введите координаты точки a по оси z");
+            var bX = + prompt("Введите координаты точки b по оси x");
+            var bY = + prompt("Введите координаты точки b по оси y");
+            var bZ = + prompt("Введите координаты точки b по оси z");
+            var cX = + prompt("Введите координаты точки c по оси x");
+            var cY = + prompt("Введите координаты точки c по оси y");
+            var cZ = + prompt("Введите координаты точки c по оси z");
+            
+            var ab = Math.pow(aX-bX, 2) + Math.pow(aY-bY, 2) + Math.pow(aZ-bZ, 2);
+            var ac = Math.pow(aX-cX, 2) + Math.pow(aY-cY, 2) + Math.pow(aZ-cZ, 2);
+            var bc = Math.pow(cX-bX, 2) + Math.pow(cY-bY, 2) + Math.pow(cZ-bZ, 2);
+            
+            if (ab + ac === bc || ab + bc === ac || ac + bc === ab) {
+                alert("Прямоугольный!");
+            } else {
+                alert("НЕ прямоугольный");
+            }
+        </script>
+    </body>
+</html>
+-->

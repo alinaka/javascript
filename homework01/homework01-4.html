@@ -5,22 +5,24 @@
     <body>
         <script>
             var a=parseInt(prompt("Какая оценка?"));
-            if (a===1) {
-                alert("плохо");
-            } else {
-                if (a===2) {
+            switch (a){
+                case 1:
+                    alert("плохо");
+                    break;
+                case 2: 
                     alert("неудовлетворительно");
-                } else {
-                    if (a===3) {
-                        alert("удовлетворительно");
-                    } else {
-                        if (a===4) {
-                            alert("хорошо");
-                        } else {
-                            alert("отлично")
-                        }
-                    }
-                }
+                    break;
+                case 3:
+                    alert("удовлетворительно");
+                    break;
+                case 4:
+                    alert("хорошо");
+                    break;
+                case 5:                      
+                    alert("отлично");
+                    break;
+                default:
+                    alert("Введите оценку по пятибалльной шкале")
             }
         </script>
     </body>
