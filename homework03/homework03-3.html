@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <script> 
+           var pass = prompt("Введите пароль");
+           var reg1 = /.{9}/;
+           var reg2 = /[a-z]+[A-Z]+/
+           var reg3 = /[\d]{2,}/
+           var reg4 = /\W/
+           alert( reg1.test(pass) );
+           alert( reg2.test(pass) );
+           alert( reg3.test(pass) );
+           alert( reg4.test(pass) );
+        </script>
+    </body>
+</html>

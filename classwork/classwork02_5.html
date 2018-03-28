@@ -3,20 +3,22 @@
        
    </head>
     <body>
-        <script type=text/javascript>
+        <script type="text/javascript">
             var text = prompt("Введите строку для шифрования");
-            var key = prompt("Введите один сиивол-ключ");
-            
             var secretText= "";
+            var key = prompt("Введите один сиивол-ключ");
+            var keyCode = key.charCodeAt(0);
+            
             var i = 0;
-            var keyCode=key.сharCodeAt(0);
-            while(i<text.length) {
-                var code=text.charCodeAt(i);
-                code = code ^ keyCode ;
+            
+            
+            while(i < text.length) {
+                var code = text.charCodeAt(i);
+                code = code ^ keyCode;
                 secretText = secretText + String.fromCharCode(code);
                 i++;
             }
-            alert(secretText);
+            alert ( secretText );
             console.log(secretText);
         </script>
     </body>
