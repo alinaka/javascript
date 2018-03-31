@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <script> 
+            let arr = [12,4,3,10,1,20];
+            let max = arr[0];
+            let min = arr[0];
+            let i;
+           
+            for (i = 0; i < arr.length; i++) {
+                    if ( arr[i] > max ) {
+                        max = arr[i];
+                    }
+                    else if ( arr[i] < min ) {
+                        min = arr[i];
+                    }
+                }
+           
+           for (i = 0; i < arr.length; i++) {
+                if ( arr[i] === max ) {
+                    arr.splice(i,1);
+                }
+           }
+           
+           for (i = 0; i < arr.length; i++) {
+                if ( arr[i] === min ) {
+                    arr.splice(i,1);
+                }
+           }
+           
+           alert( arr );
+        </script>
+    </body>
+</html>

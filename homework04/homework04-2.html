@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <script> 
+           let area = [ 1, null, 0, null, 1, null, null, null, null ] ;
+           let str = "<table border = 1px>";
+           let n;
+           
+           for (let i = 0; i < 3 + i; i += 3) {
+                if (i > 6) break;
+                str += "<tr height = 25px>";
+               
+                for (let j = 0; j < 3; j ++) {
+                    
+                    if ( area[j + i] === 1 ) {
+                        n = "X";
+                    }
+                    
+                    else if ( area[j + i] === 0 ) {
+                        n = "0";
+                    }
+                    
+                    else {
+                        n = "";
+                    }
+                    
+                    str += "<td>" + n + "</td>";
+                }
+               
+                str += "</tr>"
+           }
+           
+           str += "</table>"
+           
+           document.write(str);
+        </script>
+    </body>
+</html>
