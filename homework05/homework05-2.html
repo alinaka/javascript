@@ -3,31 +3,22 @@
    </head>
     <body>
         <script>
-            let A = [1,2, 15, 23, 89];
-            let B = [2,3,23, 5, 15];
+            let A = [1,1];
+            let B = [1,2];
 
             function getUnique(A, B) {
-                let C =[];
+                let C = A.concat();
                 
-                firstInput:
-                    for (let i = 0; i < A.length; i++) {
-                      var number = A[i];
-                      for (let j = 0; j < B.length; j++) {
-                        if (B[j] === number) continue firstInput; 
-                      }
-                      C.push(number);
-                    }
-                
-                secondInput:
+                input:
                     for (let i = 0; i < B.length; i++) {
                       let number = B[i];
                       for (let j = 0; j < A.length; j++) {
-                        if (A[j] === number) continue secondInput; 
+                        if (A[j] === number) continue input; 
                       }
                       C.push(number);
                     }
 
-            return C;
+                return C;
             }
             
             console.log( getUnique(A,B) )
