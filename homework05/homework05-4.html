@@ -1,0 +1,23 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            let days = prompt("Введите количество дней");
+            
+            function returnDays(days) {
+                if ( days % 10 === 1 && days % 100 !== 11){
+                    alert( days + ' день' );
+                } else if ( days % 10 >= 2 && days%10<=4 && 
+                           (days % 100 !== 12 && days % 100 !== 13 && days % 100 !== 14)) {
+                    alert( days + ' дня' );
+                } else {
+                    alert( days + ' дней' );
+                }
+            }
+            
+            returnDays(days);
+        
+        </script>
+    </body>
+</html>

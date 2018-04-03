@@ -6,17 +6,12 @@
        <script> 
             let A = [12, 4, 3, 10, 1, 20];
             let B = [-3, -7, -100, -33];
-            let C = A;
-           
+
 //            вставить B в конец A
-//            for (let i = 0; i < B.length; i++) {
-//                C.push(B[i]);
-//            }
+//            let C = A.concat(B);
            
 //          вставить B в начало A
-            for (let i = 0; i < B.length + i; i++) {
-                 C.unshift(B.pop());
-            }
+          let C = B.concat(A);
            
             alert( C );
         </script>

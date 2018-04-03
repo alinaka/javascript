@@ -1,0 +1,21 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            var a = {
+                x:1,
+                y:2
+            };
+            var b = {};
+            
+            for(var propName in a) {
+                b[propName] = a[propName];
+            }
+            
+            b["z"] = 3;
+            console.dir(a);
+            console.dir(b);
+        </script>
+    </body>
+</html>

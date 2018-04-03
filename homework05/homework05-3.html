@@ -1,0 +1,27 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            let a = 1, b = 1;
+            let arr = [1, 1];
+            let n = prompt("Введите желаемое количество чисел Фибоначчи");
+            function fib(n) {
+                if ( n<=2 ) {
+                    arr.length = n;
+                } else {
+                    for (i = 3; i <= n; i++) {
+                            var c = a + b;
+                            a = b;
+                            b = c;
+                            arr.push(c);
+                        }
+                    }
+                
+                return arr;
+                }
+            
+            console.log( fib(n) );
+        </script>
+    </body>
+</html>

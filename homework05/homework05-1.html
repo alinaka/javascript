@@ -1,0 +1,24 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            let student = {
+                name: "Alina",
+                surname: "Gotovtseva",
+                age: 25,
+                interests: ["movies", "sports", "maths", "IT"],
+                university: "ITMO",
+            };
+            
+            function getInfo(student) {
+                for (key in student) {
+                    console.log( key + ": " + student[key] )
+                }
+            }
+            
+            getInfo(student);
+        
+        </script>
+    </body>
+</html>

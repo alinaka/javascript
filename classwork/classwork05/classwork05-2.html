@@ -1,0 +1,29 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            let vowel = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е'];
+            let consonant = ['б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 
+                              'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 
+                              'х', 'ц', 'ч', 'ш', 'щ'];
+            let wordLength = Math.floor(Math.random() * 3) + 3;
+            // firstLetter: 0 - гласная, 1 - согласная
+            let firstLetter = Math.floor(Math.random() * 2);
+            let word = '';
+            let currLetter = firstLetter;
+            for(let i = 0; i < wordLength; i++) {
+                if(currLetter) {
+                    //согласные
+                    word += consonant[Math.floor(Math.random() * consonant.length)];
+                    currLetter = 0;
+                } else {
+                    //гласные
+                    word += vowel[Math.floor(Math.random() * vowel.length)];
+                    currLetter = 1;
+                }
+            } 
+            console.log(word);
+        </script>
+    </body>
+</html>
