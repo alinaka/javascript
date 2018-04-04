@@ -1,0 +1,24 @@
+<html>
+   <head> 
+   </head>
+    <body>
+        <script>
+            let student = {
+                name: "Иван",
+                surname: "Петров",
+                age: 25,
+                interests: ["музыка", "кино", "политика", "собаки"],
+                university: "ИТМО",
+                getInfo: function () {
+                        console.log( this.name + " " + this.surname + ". " + 
+                                    this.age + " лет. Интересы: " + 
+                                    this.interests + ". Учится в " + 
+                                    this.university )
+                }
+                };
+    
+            student.getInfo();
+        
+        </script>
+    </body>
+</html>
