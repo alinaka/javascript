@@ -7,7 +7,7 @@
             let B = [1,2,26,13,2,1,149,143,0];
 
             function getUnique(A, B) {
-                let C = A.concat();
+                let C = A.concat(B);
                 C = C.sort(fn);
                 
                 for (let i = 0; i < C.length - 1; i++) {
