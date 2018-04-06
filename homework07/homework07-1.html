@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function fn(x) {
+                if (x >= 1) {
+                    return 5/x;
+                } else {
+                    return x*x - 4*x;
+                }
+            }
+
+            var arrData = [ ["x","y = f(x)"], ];
+
+            for (var i = -499; i < 500; i++) {
+                var x = i / 100;
+                var y = Math.round(fn(x)*100) / 100;
+                
+                var arr = [x, y];
+                arrData.push(arr);
+                }
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(arrData);
+
+                var options = {
+                   title: 'Задача №3',
+                   legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    </body>
+</html>
+
+
