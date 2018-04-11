@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <div style="width:70px; background-color:black; padding: 15px;">
+            <div class='stops' style="width:40px; height:40px;border-radius:40px;background-color:grey;margin: 15px;"></div>
+            <div class='stops' style="width:40px; height:40px;border-radius:40px;background-color:grey;margin: 15px;"></div>
+            <div class='stops' style="width:40px; height:40px;border-radius:40px;background-color:grey;margin: 15px;"></div>
+        </div>
+        
+        <script>
+            var arr = document.querySelectorAll('.stops');
+            var timer;
+            var checkOrange=0;
+            
+            arr[0].style.backgroundColor = 'red';
+
+            function changeLight() {
+                outer: 
+                for (i = 0; i < arr.length; i++) {
+                    if ( arr[i].style.backgroundColor === 'red' ) {
+                        arr[i].style.backgroundColor = 'grey';
+                        arr[i + 1].style.backgroundColor = 'orange';
+                        break outer;
+                    } else if ( arr[i].style.backgroundColor === 'orange' ) {
+                        if ( checkOrange%2 !== 1 ){
+                            arr[i].style.backgroundColor = 'grey';
+                            arr[i + 1].style.backgroundColor = 'green';
+                            break outer;
+                        } else {
+                            arr[i].style.backgroundColor = 'grey';
+                            arr[i - 1].style.backgroundColor = 'red';
+                            checkOrange++;
+                            break outer;
+                        }
+                    } else if ( arr[i].style.backgroundColor === 'green' ) {
+                        arr[i].style.backgroundColor = 'grey';
+                        arr[i - 1].style.backgroundColor = 'orange';
+                        checkOrange++;
+                        break outer;
+                    }
+                }
+            }
+            timer = setInterval( changeLight, 2000 );
+        </script>
+    </body>
+</html>

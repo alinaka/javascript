@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+        <div id='container'>
+            <div style="background-color: yellow; height:200px;width:200px;"></div>
+            <div style="background-color: yellow;height:200px;width:200px;"></div>
+        </div>
+
+        <script>
+            var container = document.getElementById('container');
+            
+            container.onclick = function(e) {
+                if(e.target.style.backgroundColor === 'yellow') {
+                    e.target.style.backgroundColor = 'green';
+                } else {
+                    e.target.style.backgroundColor = 'yellow';
+                }
+            }
+
+        </script>
+    </body>
+</html>

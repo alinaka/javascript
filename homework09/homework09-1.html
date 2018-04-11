@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title></title>
+	<meta charset='UTF-8'>
+</head>
+<body>
+
+    <div id="dateTime">
+        <text id='hours'></text>
+        <text id='minutes'></text>
+        <text id='seconds'></text>
+    </div>
+
+    <script>
+        var date = new Date();
+        var p = document.getElementById('dateTime');
+        var h = document.getElementById('hours');
+        var m = document.getElementById('minutes');
+        var s = document.getElementById('seconds');
+
+        p.style.fontSize= '60px';
+        p.style.padding ='30px';
+        p.style.width = "300px";
+        p.style.height = "50px";
+        p.style.textAlign = "center";
+
+        h.innerText = addZero(date.getHours()) + ':';
+        h.style.color = '#2f0a68';
+
+        m.innerText = addZero(date.getMinutes()) + ':';
+        m.style.color = '#1f36af';
+
+        s.innerText = addZero(date.getSeconds());
+        s.style.color = '#596cd2';
+
+        var timer;
+
+        function showTime(){
+            date = new Date();
+            h.innerText = addZero(date.getHours()) + ':';
+            m.innerText = addZero(date.getMinutes()) + ':';
+            s.innerText = addZero(date.getSeconds());
+        }
+
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        timer = setInterval(showTime, 1000); 
+
+    </script>
+
+</body>
+
+</html>

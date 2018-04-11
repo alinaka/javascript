@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+        <button counter style="padding:15px;font-size:30px;margin:30px;">0</button>
+        
+        <script>
+            document.addEventListener('click', counter);
+            
+            function counter(e) {
+                if(e.target.hasAttribute('counter')) {
+                    e.target.innerHTML++;
+                }
+            };
+            
+        </script>
+    </body>
+</html>
