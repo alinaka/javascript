@@ -1,0 +1,41 @@
+td {
+                border: 1px solid grey;	
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .edit-box {
+                background: white;
+                width: 450px;
+                position: relative;
+                padding: 10px;
+            }
+
+            .edit-box img {
+                transform: translate(0,0);
+                animation: typing 5s ease infinite;
+            }
+
+            @keyframes typing {
+                0% {
+                    transform: translate(0,0)  rotate(0);
+                }
+                50% {
+                    transform: translate(200px,0)  rotate(-25deg);
+                }
+                100% {
+                    transform: translate(430px,0)  rotate(0);
+                }
+            }
+
+        input {
+            width: 460px;
+            height: 30px;
+        }
+
+        .container {
+            width: 1140px;
+            margin: auto;
+            margin-top: 30px;
+        }
