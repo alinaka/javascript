@@ -1,0 +1,34 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function User (name){
+                this.toString = function(){
+                        return this.name;
+                }
+            }
+
+            User.createUnknownUser = function(){
+                var user = new User();
+                user.name = 'Аноним';
+                return user;
+            }
+
+            User.createUser = function(data){
+                var user = new User();
+                user.name = data.name;
+                user.age = data.age;
+                return user;
+            }
+
+            var user1 = User.createUser({name:'Саша', age:20});
+            console.log(user1.toString());
+
+            var anonim = User.createUnknownUser();
+            console.log(anonim.toString());
+
+        </script>
+    </body>
+</html>
