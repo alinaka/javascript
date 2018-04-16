@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset='UTF-8'>
+	</head>
+	<body>
+		<script>
+			function Good (name, price) {
+				this.name = name;
+				this.price = price;
+			}
+
+			function Cart () {
+				this.quantity = 0;
+				this.sum = 0;
+				this.goods = [];
+                
+			}
+			
+            Cart.prototype.set = function (good, count) {
+					this.goods.push(good);
+					this.sum += good.price * count;
+					this.quantity += count;
+				};
+            
+            Cart.prototype.getSum = function() {
+					return this.sum;
+				};
+            
+            Cart.prototype.getQuantity = function() {
+					return this.quantity;
+				};
+            
+			var item1 = new Good("Reservoir Dogs", 100);
+			var item2 = new Good("Pulp Fiction", 300);
+
+			var user1 = new Cart();
+
+			user1.set(item1, 1);
+			console.log(user1.getSum());
+			console.log(user1.getQuantity());
+            
+			user1.set(item2, 2);
+			console.log(user1.getSum());
+			console.log(user1.getQuantity());
+            
+		</script>
+	</body>
+</html>

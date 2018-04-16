@@ -1,0 +1,100 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            th, td {
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+       <table id='data'>
+               <tr>
+                   <th>№</th>
+                   <th>ФИО</th>
+                   <th>Возраст</th>
+               </tr>
+        </table>
+       
+        <script>
+            let data = document.getElementById('data');
+            
+            function Student(fullName, age) {
+                this.fullName = fullName;
+                this.age = age;
+                this.number = this.currNum;
+                this.__proto__.currNum++;
+                this.fillInfo();
+                this.__proto__.students.push(this);
+            }
+            
+            Student.prototype.currNum = 1;
+            
+            Student.prototype.students = [];
+            
+            Student.prototype.fillInfo = function() {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = this.number;
+                tr.appendChild(td);
+                td = document.createElement('td');
+                td.innerHTML = this.fullName;
+                tr.appendChild(td);
+                td = document.createElement('td');
+                td.innerHTML = this.age;
+                tr.appendChild(td);
+                data.appendChild(tr);
+            }
+
+            function sortBy(event) {        
+                if ( event.target.tagName === 'TH' ) {
+                    let trs = document.getElementsByTagName('tr');
+                    let tbody = document.getElementsByTagName('tbody');
+                
+                    for ( let i = 0; i < trs.length; i++ ) { 
+                        if (trs[i] !== tbody[0].firstChild) {
+                            data.removeChild( trs[i] );
+                            i--;
+                        }
+                    }
+                    
+                    let studentsCopy = Student.prototype.students.concat();
+
+                    if (event.target.innerHTML === '№') {
+                        studentsCopy.sort( compareNumbers );
+                    } else if (event.target.innerHTML === 'ФИО') {
+                        studentsCopy.sort( compareName );
+                    } else if (event.target.innerHTML === 'Возраст') {
+                        studentsCopy.sort( compareAge );
+                    } else {
+                        return;
+                    }
+
+                    for (let i = 0; i < studentsCopy.length; i++) {
+                        studentsCopy[i].fillInfo();
+                    }
+                }
+                
+                function compareAge(a, b) {
+                    return a.age - b.age;
+                }
+            
+                function compareName(a, b) {
+                    return a.fullName < b.fullName ? -1 : a.fullName > b.fullName ? 1 : 0;
+                }
+            
+                function compareNumbers(a, b) {
+                    return a.number - b.number;
+                }
+            }
+            
+            let student1 = new Student('Иванов Иван Иванович', 18);
+            let student2 = new Student('Готовцева Алина Александровна', 25);
+            let student3 = new Student('Антонов Павел Борисович', 15);
+            let student4 = new Student('Голубев Андрей Андреевич', 22);
+
+            data.addEventListener('click', sortBy);
+            
+        </script>
+    </body>
+</html>
